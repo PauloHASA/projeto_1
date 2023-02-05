@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        {% include 'recipes/partials/head.html'%}
+        <title> {% block title %}{% endblock title %} Recipes</title>
+    </head>
+<body>
+    {%include 'recipes/partials/header.html'%} <!--Cabeçalho-->
+
+    {% include 'recipes/partials/seach.html' %}<!--Caixa de pesquisa-->
+
+    <main class="main-content-container"> <!-- Essa e a grid do site -->
+        <div class="main-content main-content-list container"> <!-- Aqui esta o conteiner principal-->
+
+            {% block content %}{% endblock content %} <!-- bloco de conteudo da pagina nomeada como content -->
+            
+        </div>
+    </main>
+
+    {%include 'recipes/partials/footer.html'%} <!--rodapé -->
+ 
+</body>
+</html>
+<!--
+    Basicamente nessa modulo contem tudo oque derá ter em uma pagina. A partir daqui, desta Base 
+    nós iremos editar em outros modulos. Como fizemos em HOME e RECIPE-VIEW.
+-->

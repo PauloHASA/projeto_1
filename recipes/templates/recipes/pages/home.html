@@ -1,21 +1,11 @@
-{% include 'recipes/partials/head.html'%}
+{% extends 'global/base.html' %} <!-- Extendendo todo o conteudo base do modulo global/base.html-->
 
-<body>
-    {%include 'recipes/partials/header.html'%} <!--Cabeçalho-->
+{% block title %} Home | {% endblock title %}
 
-    {% include 'recipes/partials/seach.html' %}<!--Caixa de pesquisa-->
-
-    <main class="main-content-container"> <!-- Essa e a grid do site -->
-        <div class="main-content main-content-list container"> <!-- Aqui esta o conteiner principal-->
-
+{% block content %} <!--Bloco de conteudo que irá preencher a base.-->
+    <div class="main-content main-content-list container"> <!-- Aqui esta o conteiner principal-->
+        {% for recipe in recipes %}
             {% include 'recipes/partials/recipe.html' %} <!-- Aqui está o container com a receita -->
-            {% include 'recipes/partials/recipe.html' %} <!-- Aqui está o container com a receita -->
-            {% include 'recipes/partials/recipe.html' %} <!-- Aqui está o container com a receita -->
-            
-        </div>
-    </main>
-
-    {%include 'recipes/partials/footer.html'%} <!--rodapé -->
- 
-</body>
-</html>
+        {% endfor %}
+    </div>
+{% endblock content %}
