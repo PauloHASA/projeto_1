@@ -1,0 +1,11 @@
+{% extends 'global/base.html' %} <!-- Extendendo todo o conteudo base do modulo global/base.html-->
+
+{% block title %} Category | {% endblock title %}
+
+{% block content %} <!--Bloco de conteudo que irá preencher a base.-->
+    <div class="main-content main-content-list container"> <!-- Aqui esta o conteiner principal-->
+        {% for recipe in recipes %}
+            {% include 'recipes/partials/recipe.html' %} <!-- Aqui está o container com a receita -->
+        {% endfor %}
+    </div>
+{% endblock content %}

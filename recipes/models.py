@@ -7,6 +7,10 @@ from django.db import models
 
 class Category(models.Model):
     name = models.CharField(max_length=65)
+    # Retornar o nome da categoria, ao inves do nome padrão do django.
+
+    def __str__(self):
+        return self.name
 
 # As classes são as tabelas no Banco de dados.
 
@@ -32,3 +36,6 @@ class Recipe(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True
     )
+
+    def __str__(self):
+        return self.title
